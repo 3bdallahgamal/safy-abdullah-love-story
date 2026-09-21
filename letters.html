@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Letters For You — Safy & Abdullah</title><link rel="stylesheet" href="style.css?v=5"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"></head><body>
+<nav><div class="brand">Safy <b>&</b> Abdullah</div><div class="navlinks"><a href="index.html">Home</a><a href="memories.html">Memories</a><a href="date.html">Date With Me</a></div></nav>
+<main class="page dark"><div class="wrap"><div class="center"><div class="eyebrow">A little something for you</div><h1>Open when<br><span>you feel it.</span></h1><p class="lead">Four little letters. Pick the one you need right now. ❤️</p></div>
+<div class="letters-grid" id="letters">
+<button class="letter-card" onclick="openLetter(0)"><span class="letter-icon">💕</span><strong>Open when you miss me</strong><small>For the days when you wish I was closer.</small></button>
+<button class="letter-card" onclick="openLetter(1)"><span class="letter-icon">🥺</span><strong>Open when you need a hug</strong><small>A tiny hug, hidden inside a letter.</small></button>
+<button class="letter-card" onclick="openLetter(2)"><span class="letter-icon">😂</span><strong>Open when you want to laugh</strong><small>Because we should never take us too seriously.</small></button>
+<button class="letter-card" onclick="openLetter(3)"><span class="letter-icon">❤️</span><strong>Open when you want to know</strong><small>How much you really mean to me.</small></button>
+</div>
+<div id="letter" class="letter-open hide"><div class="eyebrow" id="letterEyebrow"></div><div class="letter-paper"><div class="script letter-title" id="letterTitle"></div><p id="letterText"></p></div><button class="btn" onclick="closeLetter()">Choose another letter</button></div>
+<div class="center actions"><a class="btn alt" href="memories.html">← Previous</a><a class="btn" href="date.html">Continue our story →</a></div></div></main><footer>A few words, just for Safy · S&A</footer>
+<script>
+const letters=[
+{e:'For the days you miss me',t:'If you could see me right now…',p:"I probably wouldn't say much. I'd just come closer, hold you, and let you know that distance doesn't change how close you are to my heart. ❤️"},
+{e:'For the days you need a hug',t:'Come here. 🤍',p:"Consider this your official reminder that you have a hug waiting for you. The real one is better, obviously… but this one will have to do until I can give it to you myself."},
+{e:'For the days you want to laugh',t:'Okay, serious question… 😂',p:"How did two people manage to collect this many pictures, memories, inside jokes, and still somehow want more? I think we should keep doing exactly that."},
+{e:'For the days you wonder',t:'You mean more than I can put into one page.',p:"I don't need a perfect story. I just love the little moments, the laughs, the pictures, the conversations — and most importantly, having you in them. ❤️"}
+];
+function openLetter(i){document.getElementById('letters').classList.add('hide');document.getElementById('letter').classList.remove('hide');document.getElementById('letterEyebrow').textContent=letters[i].e;document.getElementById('letterTitle').textContent=letters[i].t;document.getElementById('letterText').textContent=letters[i].p;window.scrollTo({top:0,behavior:'smooth'})}
+function closeLetter(){document.getElementById('letter').classList.add('hide');document.getElementById('letters').classList.remove('hide')}
+</script></body></html>
