@@ -28,9 +28,9 @@
     if (!ctx || !playing) return;
     const now = ctx.currentTime + 0.05;
     const chord = chords[step % chords.length];
-    chord.forEach((f, i) => tone(f, now + i * 0.18, 1.7, 0.025));
-    tone(chord[0] / 2, now, 1.8, 0.018, 'triangle');
-    tone(chord[2] * 2, now + 0.72, 0.65, 0.012);
+    chord.forEach((f, i) => tone(f, now + i * 0.18, 1.7, 0.07));
+    tone(chord[0] / 2, now, 1.8, 0.045, 'triangle');
+    tone(chord[2] * 2, now + 0.72, 0.65, 0.03);
     step++;
   }
 
