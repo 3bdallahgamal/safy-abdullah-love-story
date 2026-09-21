@@ -39,7 +39,7 @@
 </div><div class="nextrow"><button class="backlink" onclick="show(3)">← Back</button><button class="btn" onclick="next(4)">Choose the place →</button></div></div>
 
 <div id="step5" class="invite-shell invite-step hide">
-<div class="stepbar"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i></div>
+<div class="stepbar"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot"></i></div>
 <div class="eyebrow center">Step 05 · The place</div><h2 class="step-title">Where do you want<br>our little date?</h2><p class="step-sub">Now choose the setting for the memory.</p>
 <div class="place-grid" id="place">
 <button class="place-card" data-value="Cinema"><span class="big">🎬</span><span><strong>Cinema</strong><small>A movie, popcorn & us.</small></span></button>
@@ -47,21 +47,33 @@
 <button class="place-card" data-value="Mall of Egypt"><span class="big">🛍️</span><span><strong>Mall of Egypt</strong><small>Food, shopping & memories.</small></span></button>
 <button class="place-card" data-value="Second Cup Coffee"><span class="big">☕</span><span><strong>Second Cup Coffee</strong><small>Just coffee and conversation.</small></span></button>
 <button class="place-card" data-value="Something else"><span class="big">✨</span><span><strong>Something else</strong><small>You choose the adventure.</small></span></button>
-</div><div class="selection-summary"><span class="summary-pill">Mood: <b id="sv">—</b></span><span class="summary-pill">Date: <b id="sd">—</b></span><span class="summary-pill">Time: <b id="st">—</b></span></div><div class="nextrow"><button class="backlink" onclick="show(4)">← Back</button><button class="btn" onclick="ticket()">Create my date pass 💌</button></div></div>
+</div><div class="selection-summary"><span class="summary-pill">Mood: <b id="sv">—</b></span><span class="summary-pill">Date: <b id="sd">—</b></span><span class="summary-pill">Time: <b id="st">—</b></span></div><div class="nextrow"><button class="backlink" onclick="show(4)">← Back</button><button class="btn" onclick="next(5)">One last question →</button></div></div>
+<div id="step6" class="invite-shell invite-step hide">
+<div class="stepbar"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i></div>
+<div class="eyebrow center">One last question…</div><h2 class="step-title">What do you want<br>from our date? ❤️</h2><p class="step-sub">Choose one little thing to make the day yours.</p>
+<div class="story-choices" id="lastwish">
+<button class="story-choice" data-value="A long conversation"><span class="choice-icon">🌙</span><strong>A long conversation</strong><small>Just us, talking about everything.</small></button>
+<button class="story-choice" data-value="Lots of pictures"><span class="choice-icon">📸</span><strong>Lots of pictures</strong><small>Because we need more memories.</small></button>
+<button class="story-choice" data-value="Just laughing together"><span class="choice-icon">😂</span><strong>Just laughing together</strong><small>No serious plans. Just us being us.</small></button>
+<button class="story-choice" data-value="Something sweet"><span class="choice-icon">🍰</span><strong>Something sweet</strong><small>A little treat for our little date.</small></button>
+<button class="story-choice" data-value="Just being with you"><span class="choice-icon">❤️</span><strong>Just being with you</strong><small>Honestly, that's enough.</small></button>
+</div>
+<div class="nextrow"><button class="backlink" onclick="show(5)">← Back</button><button class="btn" onclick="ticket()">Create my date pass 💌</button></div>
+</div>
 
 <div id="result" class="hide">
-<div class="ticket center"><div class="eyebrow">SPECIAL DATE PASS</div><div class="ticket-title">Safy <span style="color:var(--rose)">&</span> Abdullah</div><p class="script note">Officially invited. No excuses. ❤️</p><div class="ticket-meta"><div>Date<b id="td">—</b></div><div>Time<b id="tt">—</b></div><div>Place<b id="tp">—</b></div></div><div class="script" style="font-size:25px">Vibe: <span id="tv">—</span></div><p style="color:var(--muted);line-height:1.7">Valid for one very special date, unlimited laughs, and at least one picture together.</p><div class="actions"><button class="btn" onclick="surprise()">Open the message ❤️</button></div><p id="msg" class="script hide" style="font-size:31px;color:var(--rose)">Safy… I don't need a perfect plan.<br>I just want a day with you.</p></div>
+<div class="ticket center"><div class="eyebrow">SPECIAL DATE PASS</div><div class="ticket-title">Safy <span style="color:var(--rose)">&</span> Abdullah</div><p class="script note">Officially invited. No excuses. ❤️</p><div class="ticket-meta"><div>Date<b id="td">—</b></div><div>Time<b id="tt">—</b></div><div>Place<b id="tp">—</b></div></div><div class="script" style="font-size:25px">Vibe: <span id="tv">—</span></div><p id="wishLine" class="script" style="font-size:24px;color:var(--rose);margin:8px 0 14px">And one little wish: <span id="tw">—</span></p><p style="color:var(--muted);line-height:1.7">Valid for one very special date, unlimited laughs, and at least one picture together.</p><div class="actions"><button class="btn" onclick="surprise()">Open the message ❤️</button></div><p id="msg" class="script hide" style="font-size:31px;color:var(--rose)">Safy… I don't need a perfect plan.<br>I just want a day with you.</p></div>
 <div class="center actions"><a class="btn alt" href="final.html">Continue to the final page →</a></div></div>
 </div></main><footer>Special Date Invitation · S&A</footer>
 <script>
 const picks={};let noCount=0;
-function show(n){for(let i=1;i<=5;i++)document.getElementById('step'+i).classList.toggle('hide',i!==n);window.scrollTo({top:0,behavior:'smooth'});summary()}
+function show(n){for(let i=1;i<=6;i++)document.getElementById('step'+i).classList.toggle('hide',i!==n);window.scrollTo({top:0,behavior:'smooth'});summary()}
 function yes(){show(2)}
 function nope(){noCount++;const b=document.getElementById('no');b.style.transform='translate('+((Math.random()*180)-90)+'px,'+((Math.random()*80)-40)+'px)';document.getElementById('n').textContent=noCount<4?'Are you sure? 👀':'Nice try… ❤️'}
 document.querySelectorAll('[data-value]').forEach(b=>b.onclick=()=>{const group=b.closest('[id]').id;document.querySelectorAll('#'+group+' [data-value]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');picks[group]=b.dataset.value;summary()});
-function next(n){const need=n===2?'vibe':n===3?'day':n===4?'time':null;if(need&&!picks[need]){alert('Pick one first ❤️');return}show(n+1)}
+function next(n){const need=n===2?'vibe':n===3?'day':n===4?'time':n===5?'place':null;if(need&&!picks[need]){alert('Pick one first ❤️');return}show(n+1)}
 function summary(){sv.textContent=picks.vibe||'—';sd.textContent=picks.day||'—';st.textContent=picks.time||'—'}
-function ticket(){if(!picks.place){alert('Choose a place first ❤️');return}td.textContent=picks.day;tt.textContent=picks.time;tp.textContent=picks.place;tv.textContent=picks.vibe;for(let i=1;i<=5;i++)document.getElementById('step'+i).classList.add('hide');document.getElementById('result').classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'});confetti()}
+function ticket(){if(!picks.place){alert('Choose a place first ❤️');return}if(!picks.lastwish){alert('Choose your little wish first ❤️');return}td.textContent=picks.day;tt.textContent=picks.time;tp.textContent=picks.place;tv.textContent=picks.vibe;tw.textContent=picks.lastwish;for(let i=1;i<=6;i++)document.getElementById('step'+i).classList.add('hide');document.getElementById('result').classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'});confetti()}
 function surprise(){document.getElementById('msg').classList.remove('hide');confetti()}
 function confetti(){for(let i=0;i<28;i++){let s=document.createElement('span');s.textContent=['❤','✦','♡'][i%3];s.style.cssText='position:fixed;left:'+Math.random()*100+'vw;top:-20px;z-index:99;color:#c94e6c;font-size:'+(12+Math.random()*18)+'px;transition:transform 2s ease,opacity 2s';document.body.appendChild(s);setTimeout(()=>{s.style.transform='translateY(110vh) rotate(540deg)';s.style.opacity='0'},20);setTimeout(()=>s.remove(),2200)}}
 </script></body></html>
