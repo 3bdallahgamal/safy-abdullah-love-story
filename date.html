@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Date With Me? — Safy & Abdullah</title><link rel="stylesheet" href="style.css"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Date With Me? — Safy & Abdullah</title><link rel="stylesheet" href="style.css?v=3"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"></head><body>
 <nav><div class="brand">Safy <b>&</b> Abdullah</div><div class="navlinks"><a href="index.html">Home</a><a href="memories.html">Memories</a><a href="final.html">Final</a></div></nav>
 <main class="page"><div class="wrap"><div class="center"><div class="eyebrow">Special Invitation · S&A</div><h1>Date<br><span>with me?</span></h1><p class="lead">Not a form. A tiny date-planning game. Pick what feels right and we'll build your invitation together. ❤️</p></div>
 
@@ -58,7 +58,7 @@ const picks={};let noCount=0;
 function show(n){for(let i=1;i<=5;i++)document.getElementById('step'+i).classList.toggle('hide',i!==n);window.scrollTo({top:0,behavior:'smooth'});summary()}
 function yes(){show(2)}
 function nope(){noCount++;const b=document.getElementById('no');b.style.transform='translate('+((Math.random()*180)-90)+'px,'+((Math.random()*80)-40)+'px)';document.getElementById('n').textContent=noCount<4?'Are you sure? 👀':'Nice try… ❤️'}
-document.querySelectorAll('[data-value]').forEach(b=>b.onclick=()=>{const group=b.parentElement.id;b.parentElement.querySelectorAll('[data-value]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');picks[group]=b.dataset.value;summary()});
+document.querySelectorAll('[data-value]').forEach(b=>b.onclick=()=>{const group=b.closest('[id]').id;document.querySelectorAll('#'+group+' [data-value]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');picks[group]=b.dataset.value;summary()});
 function next(n){const need=n===2?'vibe':n===3?'day':n===4?'time':null;if(need&&!picks[need]){alert('Pick one first ❤️');return}show(n+1)}
 function summary(){sv.textContent=picks.vibe||'—';sd.textContent=picks.day||'—';st.textContent=picks.time||'—'}
 function ticket(){if(!picks.place){alert('Choose a place first ❤️');return}td.textContent=picks.day;tt.textContent=picks.time;tp.textContent=picks.place;tv.textContent=picks.vibe;for(let i=1;i<=5;i++)document.getElementById('step'+i).classList.add('hide');document.getElementById('result').classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'});confetti()}
