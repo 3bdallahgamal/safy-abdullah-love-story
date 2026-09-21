@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Date With Me? — Safy & Abdullah</title><link rel="stylesheet" href="style.css?v=8"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"><style>.place-card{display:grid;grid-template-columns:110px minmax(0,1fr);align-items:center;column-gap:18px;text-align:left}.place-card .place-logo{display:block;width:100px;height:72px;object-fit:contain;object-position:center;flex:none;border-radius:10px;background:#fff;padding:6px;box-sizing:border-box;overflow:hidden}.place-card .place-logo.vox{width:100px}.place-card .place-logo.secondcup{width:100px}.place-card > span:not(.big){min-width:0}.place-card > span:not(.big) strong,.place-card > span:not(.big) small{display:block}.place-card > .big{justify-self:center}@media(max-width:760px){.place-card{grid-template-columns:82px minmax(0,1fr);column-gap:14px}.place-card .place-logo{width:76px;height:64px}.place-card .place-logo.vox,.place-card .place-logo.secondcup{width:76px}}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Date With Me? — Safy & Abdullah</title><link rel="stylesheet" href="style.css?v=9"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"><style>.place-card{display:grid;grid-template-columns:110px minmax(0,1fr);align-items:center;column-gap:18px;text-align:left}.place-card .place-logo{display:block;width:100px;height:72px;object-fit:contain;object-position:center;flex:none;border-radius:10px;background:#fff;padding:6px;box-sizing:border-box;overflow:hidden}.place-card .place-logo.vox{width:100px}.place-card .place-logo.secondcup{width:100px}.place-card > span:not(.big){min-width:0}.place-card > span:not(.big) strong,.place-card > span:not(.big) small{display:block}.place-card > .big{justify-self:center}@media(max-width:760px){.place-card{grid-template-columns:82px minmax(0,1fr);column-gap:14px}.place-card .place-logo{width:76px;height:64px}.place-card .place-logo.vox,.place-card .place-logo.secondcup{width:76px}}</style></head><body>
 <nav><div class="brand">Safy <b>&</b> Abdullah</div><div class="navlinks"><a href="index.html">Home</a><a href="memories.html">Memories</a><a href="final.html">Final</a></div></nav>
 <main class="page"><div class="wrap"><div class="center"><div class="eyebrow">Special Invitation · S&A</div><h1>Date<br><span>with me?</span></h1><p class="lead">Not a form. A tiny date-planning game. Pick what feels right and we'll build your invitation together. ❤️</p></div>
 
@@ -75,10 +75,9 @@
 <p class="script" style="font-size:22px;margin:10px 0 4px">Vibe: <span id="tv2">—</span></p>
 <p class="script" style="font-size:22px;color:var(--rose);margin:4px 0">Little wish: <span id="tw2">—</span></p>
 </div>
-<div class="actions" style="margin-top:22px"><button class="btn alt" onclick="sendWhatsApp()">Send our date to Abdullah on WhatsApp 💚</button></div>
-<p style="font-size:13px;color:var(--muted);margin-top:10px">Your choices will be ready in the WhatsApp message.</p>
+<div id="finalStage" class="center actions" style="margin-top:24px"><a class="btn alt" href="final.html">Continue to the final page →</a></div>
 </div></div>
-<div id="finalStage" class="center actions hide"><a class="btn alt" href="final.html">Continue to the final page →</a></div></div>
+</div>
 </div></main><footer>Special Date Invitation · S&A</footer>
 <script>
 const picks={};let noCount=0;
@@ -88,20 +87,7 @@ function nope(){noCount++;const b=document.getElementById('no');b.style.transfor
 document.querySelectorAll('[data-value]').forEach(b=>b.onclick=()=>{const group=b.closest('[id]').id;document.querySelectorAll('#'+group+' [data-value]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');picks[group]=b.dataset.value;summary()});
 function next(n){const need=n===2?'vibe':n===3?'day':n===4?'time':n===5?'place':null;if(need&&!picks[need]){alert('Pick one first ❤️');return}show(n+1)}
 function summary(){sv.textContent=picks.vibe||'—';sd.textContent=picks.day||'—';st.textContent=picks.time||'—'}
-function ticket(){if(!picks.place){alert('Choose a place first ❤️');return}if(!picks.lastwish){alert('Choose your little wish first ❤️');return}td.textContent=picks.day;tt.textContent=picks.time;tp.textContent=picks.place;tv.textContent=picks.vibe;tw.textContent=picks.lastwish;for(let i=1;i<=6;i++)document.getElementById('step'+i).classList.add('hide');document.getElementById('result').classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'});confetti()}
+function ticket(){if(!picks.place){alert('Choose a place first ❤️');return}if(!picks.lastwish){alert('Choose your little wish first ❤️');return}td.textContent=picks.day;tt.textContent=picks.time;tp.textContent=picks.place;tv.textContent=picks.vibe;tw.textContent=picks.lastwish;localStorage.setItem('safyDatePicks',JSON.stringify(picks));for(let i=1;i<=6;i++)document.getElementById('step'+i).classList.add('hide');document.getElementById('result').classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'});confetti()}
 function surprise(){document.getElementById('openMessageAction').classList.add('hide');document.getElementById('messageStage').classList.remove('hide');td2.textContent=picks.day;tt2.textContent=picks.time;tp2.textContent=picks.place;tv2.textContent=picks.vibe;tw2.textContent=picks.lastwish;confetti()}
-function sendWhatsApp(){
-const phone='201122477552';
-const message=`❤️ It's a date!
-📅 ${picks.day||'—'}
-⏰ ${picks.time||'—'}
-📍 ${picks.place||'—'}
-✨ Vibe: ${picks.vibe||'—'}
-💌 One little wish: ${picks.lastwish||'—'}
-
-I'm officially saving our date. ❤️
-— Safy`;
-document.getElementById('finalStage').classList.remove('hide');window.location.href='https://wa.me/'+phone+'?text='+encodeURIComponent(message);
-}
 function confetti(){for(let i=0;i<28;i++){let s=document.createElement('span');s.textContent=['❤','✦','♡'][i%3];s.style.cssText='position:fixed;left:'+Math.random()*100+'vw;top:-20px;z-index:99;color:#c94e6c;font-size:'+(12+Math.random()*18)+'px;transition:transform 2s ease,opacity 2s';document.body.appendChild(s);setTimeout(()=>{s.style.transform='translateY(110vh) rotate(540deg)';s.style.opacity='0'},20);setTimeout(()=>s.remove(),2200)}}
 </script><script src="music.js?v=1"></script></body></html>
