@@ -64,5 +64,17 @@
     document.body.appendChild(b);
   }
 
-  document.addEventListener('DOMContentLoaded', addButton);
+  document.addEventListener('DOMContentLoaded', () => {
+    addButton();
+
+    // Mobile browsers block audible autoplay. Start the music
+    // automatically on the user's first tap/click anywhere.
+    const startOnFirstInteraction = async () => {
+      if (!playing) await toggleMusic();
+      document.removeEventListener('pointerdown', startOnFirstInteraction);
+      document.removeEventListener('keydown', startOnFirstInteraction);
+    };
+    document.addEventListener('pointerdown', startOnFirstInteraction, {passive:true});
+    document.addEventListener('keydown', startOnFirstInteraction, {passive:true});
+});
 })();
