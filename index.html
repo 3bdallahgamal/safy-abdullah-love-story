@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Safy & Abdullah — Our Story</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{--bg:#08080b;--ink:#f7f1eb;--muted:#aaa0a5;--rose:#dca0ae;--gold:#d6b878;--line:rgba(255,255,255,.11)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 20%,rgba(173,76,105,.13),transparent 35%),radial-gradient(circle at 80% 70%,rgba(198,158,83,.08),transparent 28%);z-index:-2}
+.noise{position:fixed;inset:0;opacity:.035;pointer-events:none;z-index:10;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{width:min(1000px,92%);margin:auto}.screen{min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;padding:70px 0}.center{text-align:center}.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}.title{font:600 clamp(55px,12vw,125px)/.82 "Cormorant Garamond",serif;letter-spacing:-.045em;margin:0}.title em{font-weight:400;color:var(--rose)}.sub{max-width:620px;margin:28px auto;color:var(--muted);font-size:15px;line-height:1.9}.btn{border:1px solid rgba(220,160,174,.45);background:rgba(220,160,174,.08);color:var(--ink);padding:14px 24px;border-radius:999px;font:500 12px Inter;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.25s}.btn:hover{background:rgba(220,160,174,.18);transform:translateY(-2px)}.scroll{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.25em;color:#756d72;text-transform:uppercase}
+.section{padding:120px 0}.section-head{margin-bottom:55px}.section-num{font:500 14px "Cormorant Garamond";color:var(--gold)}h2{font:600 clamp(42px,8vw,80px)/.9 "Cormorant Garamond";margin:12px 0}.lead{color:var(--muted);max-width:570px;line-height:1.8}
+.timeline{position:relative;margin-top:35px}.timeline:before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:var(--line)}.event{position:relative;padding:0 0 58px 55px}.dot{position:absolute;left:8px;top:4px;width:13px;height:13px;border:1px solid var(--rose);border-radius:50%;background:var(--bg);box-shadow:0 0 0 5px rgba(220,160,174,.04)}.event small{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-size:10px}.event h3{font:600 32px "Cormorant Garamond";margin:8px 0}.event p{color:var(--muted);line-height:1.8;margin:0;max-width:580px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.memory{min-height:230px;padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:.3s}.memory:hover{transform:translateY(-5px);border-color:rgba(220,160,174,.35)}.memory:after{content:"";position:absolute;inset:auto -20% -70% 25%;height:160px;background:radial-gradient(circle,rgba(220,160,174,.13),transparent 65%)}.memory .tag{font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}.memory h3{font:600 29px "Cormorant Garamond";margin:8px 0 5px}.memory p{color:var(--muted);font-size:12px;line-height:1.6;margin:0;max-width:300px}
+.quiz{border:1px solid var(--line);padding:30px;max-width:700px;background:rgba(255,255,255,.025)}.q{font:600 34px "Cormorant Garamond";margin:0 0 22px}.answers{display:grid;gap:10px}.answer{text-align:left;background:transparent;border:1px solid var(--line);color:var(--ink);padding:15px;border-radius:8px;cursor:pointer}.answer:hover{border-color:rgba(220,160,174,.5)}.answer.correct{border-color:var(--gold);background:rgba(214,184,120,.08)}.answer.wrong{opacity:.45}.quiz-result{margin-top:18px;color:var(--rose);min-height:24px;font-size:13px}
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.reason{aspect-ratio:1/1;padding:24px;border:1px solid var(--line);display:flex;align-items:flex-end;background:linear-gradient(160deg,rgba(220,160,174,.06),rgba(255,255,255,.015));transition:.3s}.reason:hover{transform:rotate(-1deg) scale(1.02);border-color:rgba(214,184,120,.4)}.reason span{font:600 26px "Cormorant Garamond"}
+.secret{max-width:650px;margin:auto;text-align:center}.lock{font-size:34px;margin-bottom:18px}.code-row{display:flex;gap:8px;max-width:420px;margin:25px auto}.code-row input{flex:1;min-width:0;background:#111116;border:1px solid var(--line);color:white;padding:14px;border-radius:7px;text-align:center;letter-spacing:.35em;text-transform:uppercase}.secret-msg{display:none;font:500 30px/1.25 "Cormorant Garamond";color:var(--rose);margin-top:25px}.secret-msg.show{display:block}
+.future{min-height:55vh;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center}.future p{font:500 clamp(35px,7vw,75px)/1 "Cormorant Garamond";max-width:850px;margin:0}.future span{color:var(--rose)}
+.reveal{text-align:center}.art{width:min(700px,100%);margin:40px auto 28px;border:1px solid rgba(220,160,174,.25);padding:8px;background:#111;border-radius:4px;box-shadow:0 25px 80px rgba(0,0,0,.5)}.art img{display:block;width:100%;height:auto}.chapter{font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}.final-line{font:600 clamp(38px,8vw,85px)/.9 "Cormorant Garamond";margin:18px 0}.final-note{color:var(--muted);font-size:13px}.footer{padding:80px 0;text-align:center;color:#615a5f;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.fade{opacity:0;transform:translateY(25px);transition:1s ease}.fade.on{opacity:1;transform:none}
+#music{position:fixed;right:18px;top:18px;z-index:20}.tiny{font-size:10px;padding:10px 14px}.backtop{margin-top:25px}
+@media(max-width:650px){.cards,.reasons{grid-template-columns:1fr}.section{padding:90px 0}.memory{min-height:190px}.code-row{flex-direction:column}.code-row input{width:100%}.code-row .btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<button id="music" class="btn tiny">♫ ambience</button>
+
+<main>
+<section class="screen">
+  <div class="center wrap fade">
+    <div class="eyebrow">A story written in little moments</div>
+    <h1 class="title">Safy <em>&</em><br>Abdullah</h1>
+    <p class="sub">Some stories don't need a perfect beginning. They just need two people who keep choosing to be part of the next chapter.</p>
+    <button class="btn" onclick="go('story')">Enter our story</button>
+  </div>
+  <div class="scroll">scroll slowly ↓</div>
+</section>
+
+<section id="story" class="section">
+<div class="wrap">
+<div class="section-head fade"><div class="section-num">01 — OUR STORY</div><h2>It started with<br><em>moments.</em></h2><p class="lead">Not every important memory arrives with fireworks. Sometimes it's a conversation, a laugh, a look, or simply the feeling that you want a little more time together.</p></div>
+<div class="timeline">
+  <div class="event fade"><div class="dot"></div><small>Chapter One</small><h3>The beginning</h3><p>Two people met, talked, and slowly became a little more important to each other than they expected.</p></div>
+  <div class="event fade"><div class="dot"></div><small>Chapter Two</small><h3>The little things</h3><p>The inside jokes. The random messages. The conversations that somehow lasted longer than planned.</p></div>
+  <div class="event fade"><div class="dot"></div><small>Chapter Three</small><h3>The favorite person</h3><p>Somewhere along the way, “talking to you” became one of those things that could instantly make a day better.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="section-head fade"><div class="section-num">02 — MEMORY CARDS</div><h2>Little things<br>worth keeping.</h2></div>
+<div class="cards">
+  <div class="memory fade"><span class="tag">Memory 01</span><h3>That one conversation</h3><p>The kind where you look at the time and wonder how it got so late.</p></div>
+  <div class="memory fade"><span class="tag">Memory 02</span><h3>The random laugh</h3><p>Nothing special happened. Somehow it still became a favorite moment.</p></div>
+  <div class="memory fade"><span class="tag">Memory 03</span><h3>Just being together</h3><p>No big plan. No perfect place. Just us, and that's enough.</p></div>
+  <div class="memory fade"><span class="tag">Memory 04</span><h3>More chapters</h3><p>Because the best memories are the ones we haven't made yet.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="section-head fade"><div class="section-num">03 — A LITTLE QUIZ</div><h2>Do you know<br><em>us?</em></h2></div>
+<div class="quiz fade">
+<p class="q">What's Abdullah's favorite thing about spending time with Safy?</p>
+<div class="answers">
+<button class="answer" onclick="answer(this,false)">The place we go</button>
+<button class="answer" onclick="answer(this,true)">The fact that it's with Safy ❤️</button>
+<button class="answer" onclick="answer(this,false)">The food</button>
+<button class="answer" onclick="answer(this,false)">Taking pictures</button>
+</div>
+<div id="quizResult" class="quiz-result"></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="section-head fade"><div class="section-num">04 — THE REASONS</div><h2>A few reasons<br><em>you're special.</em></h2></div>
+<div class="reasons">
+<div class="reason fade"><span>Because you make ordinary days feel different.</span></div>
+<div class="reason fade"><span>Because your laugh stays in my head.</span></div>
+<div class="reason fade"><span>Because I can be myself around you.</span></div>
+<div class="reason fade"><span>Because talking to you never feels like enough.</span></div>
+<div class="reason fade"><span>Because somehow, you became my favorite notification.</span></div>
+<div class="reason fade"><span>Because you're simply… you. ❤️</span></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="secret">
+<div class="section-num">05 — CLASSIFIED</div>
+<h2>There's a secret.</h2>
+<p class="lead">Only someone who knows us would know the code. Try the little clue:</p>
+<p style="color:var(--gold);font:500 22px 'Cormorant Garamond'">S + A = ?</p>
+<div class="code-row"><input id="code" maxlength="12" placeholder="type the answer"><button class="btn" onclick="unlock()">Unlock</button></div>
+<div id="secretMsg" class="secret-msg">You found it.<br><br>Safy, you're one of the most beautiful parts of Abdullah's story. ❤️</div>
+</div>
+</div>
+</section>
+
+<section class="future">
+<div class="wrap fade">
+<div class="eyebrow">06 — OUR NEXT CHAPTER</div>
+<p>The best part of our story is that <span>we haven't written it yet.</span></p>
+</div>
+</section>
+
+<section class="section reveal">
+<div class="wrap">
+<div class="fade"><div class="chapter">07 — THE FINAL PAGE</div><div class="final-line">And then…<br>there was us.</div><p class="final-note">One picture. One memory. One more chapter to keep.</p></div>
+<div class="art fade">
+<img src="https://raw.githubusercontent.com/3bdallahgamal/safy-abdullah-date/main/file_00000000fe0882109d2e30af77a25721.png" alt="Safy & Abdullah illustration" onerror="this.style.display='none'">
+</div>
+<div class="fade">
+<p class="sub">Safy, if you reached this page, then you made it all the way through our little story.<br><br>But I hope this isn't the end.<br><strong style="color:var(--ink)">It's just Chapter 01.</strong> ❤️</p>
+<div class="eyebrow">— Abdullah</div>
+<button class="btn backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">Read it again ↑</button>
+</div>
+</div>
+</section>
+</main>
+<div class="footer">Safy & Abdullah · Chapter 01 · Made with love</div>
+
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function answer(el,ok){document.querySelectorAll('.answer').forEach(x=>x.disabled=true);el.classList.add(ok?'correct':'wrong');document.getElementById('quizResult').textContent=ok?'Correct. You know the important part. ❤️':'Nice try… but Abdullah's answer is a little more romantic. 👀'}
+function unlock(){const v=document.getElementById('code').value.trim().toLowerCase().replace(/\s/g,'');const msg=document.getElementById('secretMsg');if(['safy','safyandabdullah','abdullah','us','love'].includes(v)){msg.classList.add('show');}else{msg.classList.add('show');msg.innerHTML='Close… 👀<br><br>Hint: the answer is <strong>US</strong>. ❤️'}}
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});document.querySelectorAll('.fade').forEach(e=>obs.observe(e));
+let audio,playing=false;
+document.getElementById('music').onclick=()=>{if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();if(playing){audio.suspend();playing=false;document.getElementById('music').textContent='♫ ambience';return}audio.resume();playing=true;document.getElementById('music').textContent='Ⅱ ambience';let o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=220;g.gain.value=.012;o.connect(g);g.connect(audio.destination);o.start();window.__osc=o;window.__gain=g};
+</script>
+</body>
+</html>
