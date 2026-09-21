@@ -1,15 +1,67 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Date With Me? — Safy & Abdullah</title><link rel="stylesheet" href="style.css"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet"></head><body>
 <nav><div class="brand">Safy <b>&</b> Abdullah</div><div class="navlinks"><a href="index.html">Home</a><a href="memories.html">Memories</a><a href="final.html">Final</a></div></nav>
-<main class="page"><div class="wrap"><div class="center"><div class="eyebrow">Special Invitation · S&A</div><h1>Date<br><span>with me?</span></h1><p class="lead">A tiny invitation hidden inside our story. Choose what feels right and I'll turn your answers into a little date pass. ❤️</p></div>
-<div id="step1" class="card center"><div class="eyebrow">Step 01</div><h2 class="serif" style="font-size:42px">Would you go on a date with Abdullah?</h2><div class="actions"><button class="btn" onclick="yes()">YES, obviously ❤️</button><button id="no" class="btn alt" onclick="nope()">Hmm… NO 🙈</button></div><p id="n" class="script" style="font-size:25px;color:var(--rose);min-height:32px"></p></div>
-<div id="step2" class="card hide"><div class="eyebrow">Step 02</div><h2 class="serif">Pick the vibe</h2><div class="choices" id="vibe"><button class="choice">Romantic & quiet 🌙</button><button class="choice">Fun & chaotic 😂</button><button class="choice">Simple & cozy ☕</button></div><h2 class="serif">Pick a day</h2><div class="choices" id="day"><button class="choice">September 30</button><button class="choice">October 1</button><button class="choice">October 2</button><button class="choice">October 3</button><button class="choice">October 4</button></div><h2 class="serif">Pick a time</h2><div class="choices" id="time"><button class="choice">Afternoon</button><button class="choice">Sunset</button><button class="choice">Evening</button></div><h2 class="serif">Pick the place</h2><div class="choices" id="place"><button class="choice">🎬 Cinema</button><button class="choice">🛍️ Mall Arabia</button><button class="choice">🛍️ Mall of Egypt</button><button class="choice">☕ Second Cup Coffee</button><button class="choice">✨ Something else</button></div><div class="center actions"><button class="btn" onclick="ticket()">Create my date pass 💌</button></div></div>
-<div id="step3" class="ticket center hide"><div class="eyebrow">SPECIAL DATE PASS</div><div class="ticket-title">Safy <span style="color:var(--rose)">&</span> Abdullah</div><p class="script note">Officially invited. No excuses. ❤️</p><div class="ticket-meta"><div>Date<b id="td">—</b></div><div>Time<b id="tt">—</b></div><div>Place<b id="tp">—</b></div></div><div class="script" style="font-size:25px">Vibe: <span id="tv">—</span></div><p style="color:var(--muted);line-height:1.7">Valid for one very special date, unlimited laughs, and at least one picture together.</p><div class="actions"><button class="btn" onclick="surprise()">Open the message ❤️</button></div><p id="msg" class="script hide" style="font-size:31px;color:var(--rose)">Safy… I don't need a perfect plan.<br>I just want a day with you.</p></div>
-<div class="center actions"><a class="btn alt" href="memories.html">← Memories</a><a class="btn alt" href="final.html">Final page →</a></div></div></main><footer>Special Date Invitation · S&A</footer>
+<main class="page"><div class="wrap"><div class="center"><div class="eyebrow">Special Invitation · S&A</div><h1>Date<br><span>with me?</span></h1><p class="lead">Not a form. A tiny date-planning game. Pick what feels right and we'll build your invitation together. ❤️</p></div>
+
+<div id="step1" class="invite-shell invite-step center">
+<div class="stepbar"><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<div class="eyebrow">Before we plan anything…</div><h2 class="step-title">Would you go on a date<br>with Abdullah?</h2>
+<p class="step-sub">There is only one correct answer. You already know it. 👀</p>
+<div class="actions"><button class="btn" onclick="yes()">YES, obviously ❤️</button><button id="no" class="btn alt" onclick="nope()">Hmm… NO 🙈</button></div><p id="n" class="script" style="font-size:25px;color:var(--rose);min-height:32px"></p>
+</div>
+
+<div id="step2" class="invite-shell invite-step hide">
+<div class="stepbar"><i class="dot on"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<div class="eyebrow center">Step 02 · The mood</div><h2 class="step-title">What kind of date<br>are we having?</h2><p class="step-sub">Choose the feeling, not the plan.</p>
+<div class="vibe-grid" id="vibe">
+<button class="vibe-card" data-value="Romantic & quiet 🌙"><span class="big">🌙</span><strong>Romantic & quiet</strong><small>Just us, somewhere peaceful.</small></button>
+<button class="vibe-card" data-value="Fun & chaotic 😂"><span class="big">😂</span><strong>Fun & chaotic</strong><small>Laugh until the plan disappears.</small></button>
+<button class="vibe-card" data-value="Simple & cozy ☕"><span class="big">☕</span><strong>Simple & cozy</strong><small>A coffee and a good conversation.</small></button>
+</div><div class="nextrow"><button class="backlink" onclick="show(1)">← Back</button><button class="btn" onclick="next(2)">Choose the date →</button></div></div>
+
+<div id="step3" class="invite-shell invite-step hide">
+<div class="stepbar"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i></div>
+<div class="eyebrow center">Step 03 · The date</div><h2 class="step-title">Circle the day<br><span>for us.</span></h2><p class="step-sub">Five little possibilities. Pick one.</p>
+<div class="calendar" id="day">
+<button class="date-card" data-value="September 30"><span class="month">September</span><span class="daynum">30</span><span class="dow">30 Sep</span></button>
+<button class="date-card" data-value="October 1"><span class="month">October</span><span class="daynum">01</span><span class="dow">01 Oct</span></button>
+<button class="date-card" data-value="October 2"><span class="month">October</span><span class="daynum">02</span><span class="dow">02 Oct</span></button>
+<button class="date-card" data-value="October 3"><span class="month">October</span><span class="daynum">03</span><span class="dow">03 Oct</span></button>
+<button class="date-card" data-value="October 4"><span class="month">October</span><span class="daynum">04</span><span class="dow">04 Oct</span></button>
+</div><div class="nextrow"><button class="backlink" onclick="show(2)">← Back</button><button class="btn" onclick="next(3)">Choose the time →</button></div></div>
+
+<div id="step4" class="invite-shell invite-step hide">
+<div class="stepbar"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot"></i></div>
+<div class="eyebrow center">Step 04 · The time</div><h2 class="step-title">When should<br>our day begin?</h2><p class="step-sub">Pick the part of the day that feels right.</p>
+<div class="time-grid" id="time">
+<button class="time-card" data-value="Afternoon"><span class="big">☀️</span><strong>Afternoon</strong></button>
+<button class="time-card" data-value="Sunset"><span class="big">🌅</span><strong>Sunset</strong></button>
+<button class="time-card" data-value="Evening"><span class="big">🌙</span><strong>Evening</strong></button>
+</div><div class="nextrow"><button class="backlink" onclick="show(3)">← Back</button><button class="btn" onclick="next(4)">Choose the place →</button></div></div>
+
+<div id="step5" class="invite-shell invite-step hide">
+<div class="stepbar"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i></div>
+<div class="eyebrow center">Step 05 · The place</div><h2 class="step-title">Where do you want<br>our little date?</h2><p class="step-sub">Now choose the setting for the memory.</p>
+<div class="place-grid" id="place">
+<button class="place-card" data-value="Cinema"><span class="big">🎬</span><span><strong>Cinema</strong><small>A movie, popcorn & us.</small></span></button>
+<button class="place-card" data-value="Mall Arabia"><span class="big">🛍️</span><span><strong>Mall Arabia</strong><small>Walk around and make a night of it.</small></span></button>
+<button class="place-card" data-value="Mall of Egypt"><span class="big">🛍️</span><span><strong>Mall of Egypt</strong><small>Food, shopping & memories.</small></span></button>
+<button class="place-card" data-value="Second Cup Coffee"><span class="big">☕</span><span><strong>Second Cup Coffee</strong><small>Just coffee and conversation.</small></span></button>
+<button class="place-card" data-value="Something else"><span class="big">✨</span><span><strong>Something else</strong><small>You choose the adventure.</small></span></button>
+</div><div class="selection-summary"><span class="summary-pill">Mood: <b id="sv">—</b></span><span class="summary-pill">Date: <b id="sd">—</b></span><span class="summary-pill">Time: <b id="st">—</b></span></div><div class="nextrow"><button class="backlink" onclick="show(4)">← Back</button><button class="btn" onclick="ticket()">Create my date pass 💌</button></div></div>
+
+<div id="result" class="hide">
+<div class="ticket center"><div class="eyebrow">SPECIAL DATE PASS</div><div class="ticket-title">Safy <span style="color:var(--rose)">&</span> Abdullah</div><p class="script note">Officially invited. No excuses. ❤️</p><div class="ticket-meta"><div>Date<b id="td">—</b></div><div>Time<b id="tt">—</b></div><div>Place<b id="tp">—</b></div></div><div class="script" style="font-size:25px">Vibe: <span id="tv">—</span></div><p style="color:var(--muted);line-height:1.7">Valid for one very special date, unlimited laughs, and at least one picture together.</p><div class="actions"><button class="btn" onclick="surprise()">Open the message ❤️</button></div><p id="msg" class="script hide" style="font-size:31px;color:var(--rose)">Safy… I don't need a perfect plan.<br>I just want a day with you.</p></div>
+<div class="center actions"><a class="btn alt" href="final.html">Continue to the final page →</a></div></div>
+</div></main><footer>Special Date Invitation · S&A</footer>
 <script>
-let noCount=0;const picks={};function yes(){step1.classList.add('hide');step2.classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'})}
-function nope(){noCount++;let b=document.getElementById('no');b.style.transform='translate('+((Math.random()*180)-90)+'px,'+((Math.random()*80)-40)+'px)';n.textContent=noCount<4?'Are you sure? 👀':'Nice try… ❤️'}
-document.querySelectorAll('.choices').forEach(group=>group.addEventListener('click',e=>{if(!e.target.classList.contains('choice'))return;group.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));e.target.classList.add('selected');picks[group.id]=e.target.textContent.trim()}))
-function ticket(){let ids=['vibe','day','time','place'];if(ids.some(x=>!picks[x])){alert('Choose one option from each section first ❤️');return}td.textContent=picks.day;tt.textContent=picks.time;tp.textContent=picks.place;tv.textContent=picks.vibe;step2.classList.add('hide');step3.classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'});confetti()}
-function surprise(){msg.classList.remove('hide');confetti()}
-function confetti(){for(let i=0;i<28;i++){let s=document.createElement('span');s.textContent=['❤','✦','♡'][i%3];s.style.cssText='position:fixed;left:'+Math.random()*100+'vw;top:-20px;z-index:99;color:#c94e6c;font-size:'+(12+Math.random()*18)+'px;transition:transform 2s ease,opacity 2s;';document.body.appendChild(s);setTimeout(()=>{s.style.transform='translateY(110vh) rotate(540deg)';s.style.opacity='0'},20);setTimeout(()=>s.remove(),2200)}}
+const picks={};let noCount=0;
+function show(n){for(let i=1;i<=5;i++)document.getElementById('step'+i).classList.toggle('hide',i!==n);window.scrollTo({top:0,behavior:'smooth'});summary()}
+function yes(){show(2)}
+function nope(){noCount++;const b=document.getElementById('no');b.style.transform='translate('+((Math.random()*180)-90)+'px,'+((Math.random()*80)-40)+'px)';document.getElementById('n').textContent=noCount<4?'Are you sure? 👀':'Nice try… ❤️'}
+document.querySelectorAll('[data-value]').forEach(b=>b.onclick=()=>{const group=b.parentElement.id;b.parentElement.querySelectorAll('[data-value]').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');picks[group]=b.dataset.value;summary()});
+function next(n){const need=n===2?'vibe':n===3?'day':n===4?'time':null;if(need&&!picks[need]){alert('Pick one first ❤️');return}show(n+1)}
+function summary(){sv.textContent=picks.vibe||'—';sd.textContent=picks.day||'—';st.textContent=picks.time||'—'}
+function ticket(){if(!picks.place){alert('Choose a place first ❤️');return}td.textContent=picks.day;tt.textContent=picks.time;tp.textContent=picks.place;tv.textContent=picks.vibe;for(let i=1;i<=5;i++)document.getElementById('step'+i).classList.add('hide');document.getElementById('result').classList.remove('hide');window.scrollTo({top:0,behavior:'smooth'});confetti()}
+function surprise(){document.getElementById('msg').classList.remove('hide');confetti()}
+function confetti(){for(let i=0;i<28;i++){let s=document.createElement('span');s.textContent=['❤','✦','♡'][i%3];s.style.cssText='position:fixed;left:'+Math.random()*100+'vw;top:-20px;z-index:99;color:#c94e6c;font-size:'+(12+Math.random()*18)+'px;transition:transform 2s ease,opacity 2s';document.body.appendChild(s);setTimeout(()=>{s.style.transform='translateY(110vh) rotate(540deg)';s.style.opacity='0'},20);setTimeout(()=>s.remove(),2200)}}
 </script></body></html>
